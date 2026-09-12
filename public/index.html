@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PICHARDO — ropa, gorras, pantalones, chaquetas y hoodies. Compra online.">
+  <meta name="theme-color" content="#111111">
+  <title>PICHARDO | Tienda oficial</title>
+  <style>
+    :root{--ink:#111;--cream:#f5f1e8;--gold:#d6a73a;--muted:#6f6f6f;--white:#fff;--line:#e8e4db;--green:#1e7a4b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)}
+    a{color:inherit}.top{background:#111;color:#fff;text-align:center;padding:9px;font-size:13px;letter-spacing:.04em}
+    header{position:sticky;top:0;z-index:20;background:rgba(245,241,232,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;gap:18px}
+    .brand{font-weight:950;letter-spacing:.16em;font-size:24px;text-decoration:none}.brand small{display:block;font-size:8px;letter-spacing:.35em;font-weight:700;margin-top:2px}
+    nav{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:700}nav a{text-decoration:none}nav a:hover{color:#9a7419}
+    .cart-btn{border:1px solid #111;background:#111;color:#fff;padding:11px 16px;border-radius:999px;font-weight:800;cursor:pointer}
+    .hero{max-width:1180px;margin:auto;min-height:590px;padding:70px 20px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px}
+    .eyebrow{font-weight:900;letter-spacing:.16em;font-size:12px;text-transform:uppercase}.hero h1{font-size:clamp(48px,8vw,92px);line-height:.9;margin:14px 0 22px;letter-spacing:-.055em}.hero p{font-size:18px;line-height:1.7;max-width:600px;color:#4e4e4e}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border:1px solid #111;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:900;cursor:pointer}.btn.dark{background:#111;color:#fff}.btn.light{background:transparent}
+    .hero-art{min-height:470px;display:grid;place-items:center;position:relative}.circle{position:absolute;width:420px;height:420px;border-radius:50%;background:#e8dfcd}
+    .bear{position:relative;width:260px;height:300px;z-index:1}.ear{position:absolute;width:76px;height:76px;background:#3a2b22;border-radius:50%;top:10px}.ear.left{left:22px}.ear.right{right:22px}.ear:after{content:"";position:absolute;inset:17px;background:#725442;border-radius:50%}
+    .head{position:absolute;left:30px;top:42px;width:200px;height:180px;border-radius:47% 47% 42% 42%;background:#4b372b}.eye{position:absolute;top:83px;width:13px;height:17px;background:#111;border-radius:50%}.eye.left{left:72px}.eye.right{right:72px}.muzzle{position:absolute;left:61px;top:115px;width:78px;height:62px;background:#d4b79b;border-radius:50%}.nose{position:absolute;left:89px;top:130px;width:23px;height:16px;background:#111;border-radius:50%}.mouth{position:absolute;left:92px;top:146px;width:17px;height:18px;border-left:2px solid #111;border-bottom:2px solid #111;border-radius:0 0 0 12px;transform:rotate(-45deg)}
+    .body{position:absolute;left:50px;top:205px;width:160px;height:95px;background:#111;border-radius:45px 45px 18px 18px}.body span{display:block;color:#fff;font-weight:950;text-align:center;font-size:18px;letter-spacing:.13em;margin-top:33px}
+    .section{max-width:1180px;margin:auto;padding:72px 20px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.section h2{font-size:42px;margin:0;letter-spacing:-.04em}.section-head p{color:var(--muted);max-width:500px}
+    .cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.cat{background:#fff;border:1px solid var(--line);padding:28px 18px;border-radius:14px;text-decoration:none;font-weight:900;min-height:120px;display:flex;align-items:end}.cat:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0000000d}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}.filter{background:#fff;border:1px solid var(--line);padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:800}.filter.active{background:#111;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}.visual{height:260px;background:linear-gradient(145deg,#eee9df,#ddd5c5);display:grid;place-items:center;position:relative}.visual .mini-bear{font-size:90px}.tag{position:absolute;left:12px;top:12px;background:#111;color:#fff;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900}.info{padding:17px}.info h3{font-size:17px;margin:0 0 7px}.type{font-size:12px;color:#777}.price{font-size:19px;font-weight:950;margin:14px 0}.add{width:100%;background:#111;color:#fff;border:0;border-radius:8px;padding:12px;font-weight:900;cursor:pointer}.add:hover{background:#d6a73a;color:#111}
+    .trust{background:#111;color:#fff}.trust .section{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.trust h3{margin:0 0 8px}.trust p{color:#cfcfcf;line-height:1.5;margin:0;font-size:14px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-card{background:#fff;padding:36px;border-radius:16px;border:1px solid var(--line)}.about h2{font-size:44px;margin:0 0 16px}.about p{line-height:1.75;color:#555}
+    .contact{background:#e9e1d1}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.contact-card{background:#fff;padding:30px;border-radius:14px}.contact-card h3{margin-top:0}.contact-card p{line-height:1.7;color:#555}
+    footer{background:#111;color:#fff;padding:45px 20px}.footer-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer-inner p,.footer-inner a{color:#bbb;font-size:14px;line-height:1.7}.footer-inner a{display:block;text-decoration:none;margin:6px 0}.copy{border-top:1px solid #333;margin-top:30px;padding-top:20px;color:#777;font-size:12px}
+    .drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:24px;display:flex;flex-direction:column}.panel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.close{border:0;background:transparent;font-size:26px;cursor:pointer}.cart-items{flex:1;overflow:auto;padding:10px 0}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}.qty{display:flex;gap:8px;align-items:center}.qty button{width:28px;height:28px;border:1px solid #ccc;background:#fff;border-radius:6px;cursor:pointer}.remove{color:#a22;border:0;background:none;cursor:pointer}.total{border-top:1px solid var(--line);padding-top:16px;font-size:22px;font-weight:950;display:flex;justify-content:space-between}.checkout-btn{margin-top:14px;width:100%;background:#111;color:#fff;border:0;border-radius:8px;padding:15px;font-weight:950;font-size:16px;cursor:pointer}.checkout-btn:disabled{opacity:.6;cursor:wait}.note{font-size:12px;color:#777;text-align:center;margin:10px 0 0}
+    .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;padding:12px 17px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:100}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+    .policy{max-width:900px;margin:auto;padding:60px 20px}.policy h1{font-size:48px}.policy h2{margin-top:35px}.policy p,.policy li{line-height:1.75;color:#555}
+    @media(max-width:900px){nav{display:none}.hero{grid-template-columns:1fr}.hero-art{min-height:390px}.cats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.trust .section{grid-template-columns:repeat(2,1fr)}.about,.contact-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.hero{padding-top:40px}.circle{width:310px;height:310px}.bear{transform:scale(.82)}.grid{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.trust .section,.footer-inner{grid-template-columns:1fr}.section h2,.about h2{font-size:34px}}
+  </style>
+</head>
+<body>
+  <div class="top">ENVÍOS DISPONIBLES · PAGO SEGURO · PICHARDO</div>
+  <header><div class="nav">
+    <a class="brand" href="#inicio">PICHARDO<small>OFFICIAL STORE</small></a>
+    <nav><a href="#tienda">Tienda</a><a href="#categorias">Categorías</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+    <button class="cart-btn" onclick="openCart()">🛒 Carrito (<span id="cartCount">0</span>)</button>
+  </div></header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Nueva colección · PICHARDO</div>
+        <h1>Viste tu actitud.</h1>
+        <p>Ropa urbana con identidad propia. Camisetas, gorras, pantalones, chaquetas y hoodies PICHARDO para llevar tu estilo todos los días.</p>
+        <div class="actions"><a class="btn dark" href="#tienda">Comprar ahora</a><a class="btn light" href="#nosotros">Conocer PICHARDO</a></div>
+      </div>
+      <div class="hero-art" aria-label="Oso PICHARDO"><div class="circle"></div><div class="bear"><div class="ear left"></div><div class="ear right"></div><div class="head"><div class="eye left"></div><div class="eye right"></div><div class="muzzle"></div><div class="nose"></div><div class="mouth"></div></div><div class="body"><span>PICHARDO</span></div></div></div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="section-head"><div><div class="eyebrow">Explora</div><h2>Categorías</h2></div><p>Encuentra tu próxima pieza PICHARDO.</p></div>
+      <div class="cats">
+        <a class="cat" href="#tienda" onclick="setFilter('camisetas')">👕 Camisetas</a>
+        <a class="cat" href="#tienda" onclick="setFilter('gorras')">🧢 Gorras</a>
+        <a class="cat" href="#tienda" onclick="setFilter('pantalones')">👖 Pantalones</a>
+        <a class="cat" href="#tienda" onclick="setFilter('chaquetas')">🧥 Chaquetas</a>
+        <a class="cat" href="#tienda" onclick="setFilter('hoodies')">🧶 Hoodies</a>
+      </div>
+    </section>
+
+    <section class="section" id="tienda">
+      <div class="section-head"><div><div class="eyebrow">Colección</div><h2>La tienda</h2></div><p>Agrega tus favoritos al carrito y continúa al pago seguro.</p></div>
+      <div class="filters">
+        <button class="filter active" data-filter="todos" onclick="setFilter('todos')">Todos</button>
+        <button class="filter" data-filter="camisetas" onclick="setFilter('camisetas')">Camisetas</button>
+        <button class="filter" data-filter="gorras" onclick="setFilter('gorras')">Gorras</button>
+        <button class="filter" data-filter="pantalones" onclick="setFilter('pantalones')">Pantalones</button>
+        <button class="filter" data-filter="chaquetas" onclick="setFilter('chaquetas')">Chaquetas</button>
+        <button class="filter" data-filter="hoodies" onclick="setFilter('hoodies')">Hoodies</button>
+      </div>
+      <div class="grid" id="products"></div>
+    </section>
+
+    <section class="trust"><div class="section">
+      <div><h3>🔒 Pago seguro</h3><p>Checkout preparado para Stripe.</p></div>
+      <div><h3>📦 Envíos</h3><p>Información de envío mostrada antes de finalizar la compra.</p></div>
+      <div><h3>↩️ Devoluciones</h3><p>Consulta nuestra política antes de comprar.</p></div>
+      <div><h3>💬 Atención</h3><p>Estamos aquí para ayudarte con tu pedido.</p></div>
+    </div></section>
+
+    <section class="section about" id="nosotros">
+      <div><div class="eyebrow">La marca</div><h2>PICHARDO es actitud.</h2><p>Una marca de ropa con una identidad fuerte, urbana y fácil de reconocer. Nuestro oso representa energía, personalidad y el espíritu de vestir diferente.</p><p>Esta tienda está diseñada para presentar la colección PICHARDO de forma clara, profesional y preparada para compras online.</p></div>
+      <div class="about-card"><div class="eyebrow">Horario</div><h3>Estamos para servirte</h3><p><strong>Lunes–viernes:</strong> 9:00 AM–9:00 PM<br><strong>Sábado:</strong> 9:00 AM–7:00 PM<br><strong>Domingo:</strong> Cerrado</p><p id="openStatus" style="font-weight:900">Verificando horario…</p></div>
+    </section>
+
+    <section class="section contact" id="contacto"><div class="section-head"><div><div class="eyebrow">Ayuda</div><h2>Contacto</h2></div></div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Atención al cliente</h3><p><strong>Email:</strong> <a href="mailto:ventas@pichardo.store">ventas@pichardo.store</a><br><strong>Marca:</strong> PICHARDO</p><p>Para pedidos, cambios o preguntas, escríbenos y te responderemos lo antes posible.</p></div>
+        <div class="contact-card"><h3>Información de compra</h3><p>Los precios aparecen en dólares estadounidenses. El checkout de Stripe mostrará los datos necesarios para completar el pago y la dirección de envío.</p><p><a href="/privacy.html">Privacidad</a> · <a href="/terms.html">Términos</a> · <a href="/returns.html">Devoluciones</a></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner">
+    <div><div class="brand">PICHARDO</div><p>Ropa con identidad propia.</p></div>
+    <div><strong>Tienda</strong><a href="#tienda">Todos los productos</a><a href="#categorias">Categorías</a><a href="#contacto">Contacto</a></div>
+    <div><strong>Información</strong><a href="/privacy.html">Política de privacidad</a><a href="/terms.html">Términos y condiciones</a><a href="/returns.html">Devoluciones y reembolsos</a></div>
+  </div><div class="footer-inner copy">© 2026 PICHARDO. Todos los derechos reservados.</div></footer>
+
+  <div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><aside class="panel">
+    <div class="panel-head"><h2>Tu carrito</h2><button class="close" onclick="closeCart()">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <button class="checkout-btn" onclick="checkout()">💳 Pagar con tarjeta</button>
+    <div class="note">Serás dirigido al checkout seguro de Stripe.</div>
+  </aside></div>
+  <div class="toast" id="toast"></div>
+
+<script>
+const products=[
+ {id:"camiseta-oso",name:"Camiseta Oso PICHARDO",category:"camisetas",price:34.99,emoji:"👕"},
+ {id:"gorra-classic",name:"Gorra PICHARDO Classic",category:"gorras",price:29.99,emoji:"🧢"},
+ {id:"pantalon-urban",name:"Pantalón PICHARDO Urban",category:"pantalones",price:49.99,emoji:"👖"},
+ {id:"chaqueta-black",name:"Chaqueta PICHARDO Black",category:"chaquetas",price:69.99,emoji:"🧥"},
+ {id:"sueter-oso",name:"Suéter Oso PICHARDO",category:"hoodies",price:54.99,emoji:"🧶"},
+ {id:"camiseta-gold",name:"Camiseta PICHARDO Gold",category:"camisetas",price:39.99,emoji:"👕"},
+ {id:"gorra-oso",name:"Gorra Oso PICHARDO",category:"gorras",price:32.99,emoji:"🧢"},
+ {id:"hoodie-bear",name:"Hoodie PICHARDO Bear",category:"hoodies",price:64.99,emoji:"🧶"}
+];
+let cart=JSON.parse(localStorage.getItem("pichardo_cart")||"[]");
+const money=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n);
+function save(){localStorage.setItem("pichardo_cart",JSON.stringify(cart));renderCart()}
+function renderProducts(filter="todos"){document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));document.getElementById("products").innerHTML=products.filter(p=>filter==="todos"||p.category===filter).map(p=>`<article class="product"><div class="visual"><span class="tag">${p.category}</span><div class="mini-bear">${p.emoji}</div></div><div class="info"><h3>${p.name}</h3><div class="type">PICHARDO · Colección oficial</div><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart('${p.id}')">Agregar al carrito</button></div></article>`).join("")}
+function setFilter(f){renderProducts(f);document.getElementById("tienda").scrollIntoView({behavior:"smooth"})}
+function addToCart(id){const p=products.find(x=>x.id===id);const item=cart.find(x=>x.id===id);if(item)item.quantity++;else cart.push({id:p.id,name:p.name,price:p.price,quantity:1});save();openCart();toast("Agregado al carrito")}
+function renderCart(){const count=cart.reduce((s,x)=>s+x.quantity,0);document.getElementById("cartCount").textContent=count;const box=document.getElementById("cartItems");if(!cart.length){box.innerHTML='<p style="color:#777">Tu carrito está vacío.</p>';document.getElementById("cartTotal").textContent="$0.00";return}box.innerHTML=cart.map(i=>`<div class="cart-item"><div><strong>${i.name}</strong><div style="color:#777;margin:5px 0">${money(i.price)} · ${money(i.price*i.quantity)}</div><div class="qty"><button onclick="changeQty('${i.id}',-1)">−</button><span>${i.quantity}</span><button onclick="changeQty('${i.id}',1)">+</button><button class="remove" onclick="removeItem('${i.id}')">Eliminar</button></div></div></div>`).join("");document.getElementById("cartTotal").textContent=money(cart.reduce((s,x)=>s+x.price*x.quantity,0))}
+function changeQty(id,d){const x=cart.find(i=>i.id===id);if(!x)return;x.quantity+=d;if(x.quantity<=0)cart=cart.filter(i=>i.id!==id);save()}
+function removeItem(id){cart=cart.filter(i=>i.id!==id);save()}
+function openCart(){document.getElementById("drawer").classList.add("open");renderCart()}function closeCart(){document.getElementById("drawer").classList.remove("open")}
+function toast(t){const x=document.getElementById("toast");x.textContent=t;x.classList.add("show");setTimeout(()=>x.classList.remove("show"),1800)}
+async function checkout(){
+ if(!cart.length){toast("Agrega productos antes de pagar.");return}
+ const b=document.querySelector(".checkout-btn");b.disabled=true;b.textContent="⏳ Preparando pago…";
+ try{
+  const r=await fetch("/create-checkout-session",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:cart.map(x=>({id:x.id,quantity:x.quantity}))})});
+  const d=await r.json();if(!r.ok)throw new Error(d.error||"No se pudo iniciar el pago.");window.location.href=d.url;
+ }catch(e){console.error(e);toast("No se pudo iniciar el pago.");b.disabled=false;b.textContent="💳 Pagar con tarjeta"}
+}
+function updateHours(){
+ const now=new Date(), day=now.getDay(), mins=now.getHours()*60+now.getMinutes();
+ let open=false, text="";
+ if(day>=1&&day<=5){open=mins>=540&&mins<1260;text=open?"● Abierto ahora":"● Cerrado ahora";}
+ else if(day===6){open=mins>=540&&mins<1140;text=open?"● Abierto ahora":"● Cerrado ahora";}
+ else{text="● Cerrado — Regresamos el lunes a las 9:00 AM."}
+ const el=document.getElementById("openStatus");el.textContent=text;el.style.color=open?"#1e7a4b":"#a33";
+}
+renderProducts();renderCart();updateHours();setInterval(updateHours,60000);
+</script>
+</body></html>
